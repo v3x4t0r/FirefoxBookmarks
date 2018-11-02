@@ -1,2 +1,2 @@
 # FirefoxBookmarks
-Display bookmark url in terminal
+Display firefox bookmark url in terminal on a debian based system
