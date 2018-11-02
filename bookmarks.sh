@@ -4,7 +4,7 @@
 lz4=$(dpkg -l | grep liblz4-dev)
 if [ -z "$lz4" ]
 then
-  echo "liblz4-dev = Not installed, install it? y/n"
+  echo "Not installed, install it? y/n"
   read install1
   var=y
   if [ $install1 = $var ]
@@ -17,8 +17,8 @@ then
 fi
 
 #Check if pkg-config is installed
-lz4=$(dpkg -l | grep liblz4-dev)
-if [ -z "$lz4" ]
+pkg=$(dpkg -l | grep pkg-config)
+if [ -z "$pkg" ]
 then
   echo "pkg-config = Not installed, install it? y/n"
   read install2
