@@ -4,7 +4,7 @@
 lz4=$(dpkg -l | grep liblz4-dev)
 if [ -z "$lz4" ]
 then
-  echo "Not installed, install it? y/n"
+  echo "liblz4-dev = Not installed, install it? y/n"
   read install1
   var=y
   if [ $install1 = $var ]
