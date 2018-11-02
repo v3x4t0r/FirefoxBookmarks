@@ -38,14 +38,14 @@ bookmarks=$($lz4jsoncat ~/.mozilla/firefox/*.default/bookmarkbackups/*.jsonlz4)
 #Regex to match only url`s
 links=$(echo $bookmarks | grep -ohP '"uri":"[^"]*' | grep -ohP 'http?.*')
 
-#For loop to remove duplicates
+#For loop to create a list of url
 touch links.txt && > links.txt
 for line in $links
   do
     echo $line >> links.txt
 done
 
-#Remove duplicate entries
+#Remove duplicate entries from list
 sort links.txt | uniq
 #clean up
 rm links.txt
