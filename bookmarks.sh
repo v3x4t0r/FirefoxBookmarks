@@ -44,6 +44,8 @@ for line in $links
   do
     echo $line >> links.txt
 done
-#cat links.txt
+
+#Remove duplicate entries
 sort links.txt | uniq
+#clean up
 rm links.txt
