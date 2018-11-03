@@ -1,4 +1,27 @@
 #/bin/bash
+#Unlock dpkg if locked
+if [ -f /var/lib/dpkg/lock ]
+then
+  rm /var/lib/dpkg/lock
+fi
+#Check if build-essentials is installed
+
+build=$(dpkg -l | grep build-essential)
+if [ -z "$build" ]
+then
+  echo "Not installed, install it? y/n"
+  read install
+  var=y
+  if [ $install = $var ]
+  then
+    sudo apt install build-essential
+  else exit
+  fi
+  else
+    echo "Build-Essentail is installed"
+fi
+
+
 
 #Check if liblz4-dev is installed
 lz4=$(dpkg -l | grep liblz4-dev)
@@ -9,7 +32,7 @@ then
   var=y
   if [ $install1 = $var ]
   then
-    apt install liblz4-dev
+    sudo apt install liblz4-dev
   else exit
   fi
   else
@@ -25,7 +48,7 @@ then
   var=y
   if [ $install2 = $var ]
   then
-    apt install pkg-config
+    sudo apt install pkg-config
   else exit
   fi
   else
