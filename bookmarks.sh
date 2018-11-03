@@ -9,7 +9,7 @@ fi
 build=$(dpkg -l | grep build-essential)
 if [ -z "$build" ]
 then
-  echo "Not installed, install it? y/n"
+  echo "Build-Essentail Not installed, install it? y/n"
   read install
   var=y
   if [ $install = $var ]
@@ -27,7 +27,7 @@ fi
 lz4=$(dpkg -l | grep liblz4-dev)
 if [ -z "$lz4" ]
 then
-  echo "Not installed, install it? y/n"
+  echo "liblz4-dev = Not installed, install it? y/n"
   read install1
   var=y
   if [ $install1 = $var ]
@@ -64,9 +64,13 @@ if [ -z "$lz4jsoncat" ]
     read install3
     if [ $install3 = 'y' ]
     then
-      mkdir lz4json && cd lz4json
-      git clone https://github.com/andikleen/lz4json.git
-      cd lz4json && make
+      if [ -d "lz4json" ]
+      then
+        cd lz4json && make && cd
+      else
+        mkdir lz4json && cd lz4json
+        git clone https://github.com/andikleen/lz4json.git
+        cd lz4json && make && cd
     fi
   else
     echo "lz4jsoncat is installed @ $lz4jsoncat"
