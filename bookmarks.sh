@@ -71,6 +71,7 @@ if [ -z "$lz4jsoncat" ]
         mkdir lz4json && cd lz4json
         git clone https://github.com/andikleen/lz4json.git
         cd lz4json && make && cd
+      fi
     fi
   else
     echo "lz4jsoncat is installed @ $lz4jsoncat"
