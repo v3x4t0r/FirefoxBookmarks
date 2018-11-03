@@ -78,7 +78,7 @@ if [ -z "$lz4jsoncat" ]
   fi
 
 #decompress the jsonlz4 bookmarks
-bookmarks=$(sudp $lz4jsoncat ~/.mozilla/firefox/*.default/bookmarkbackups/*.jsonlz4)
+bookmarks=$(sudo $lz4jsoncat ~/.mozilla/firefox/*.default/bookmarkbackups/*.jsonlz4)
 #Regex to match only url`s
 links=$(echo $bookmarks | grep -ohP '"uri":"[^"]*' | grep -ohP 'http?.*')
 
