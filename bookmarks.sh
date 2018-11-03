@@ -1,6 +1,6 @@
 #/bin/bash
 
-if [ $1 == "install" ]
+if [[ $1 == "install" ]]
 then
   #Unlock dpkg if locked
   if [ -f /var/lib/dpkg/lock ]
