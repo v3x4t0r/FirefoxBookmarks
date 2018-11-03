@@ -1,11 +1,12 @@
 #/bin/bash
+
 #Unlock dpkg if locked
 if [ -f /var/lib/dpkg/lock ]
 then
   rm /var/lib/dpkg/lock
 fi
-#Check if build-essentials is installed
 
+#Check if build-essentials is installed
 build=$(dpkg -l | grep build-essential)
 if [ -z "$build" ]
 then
@@ -20,8 +21,6 @@ then
   else
     echo "Build-Essentail is installed"
 fi
-
-
 
 #Check if liblz4-dev is installed
 lz4=$(dpkg -l | grep liblz4-dev)
@@ -88,6 +87,9 @@ for line in $links
   do
     echo $line >> links.txt
 done
-#cat links.txt
+echo " "
+echo "Firefox Bookmarks: "
+echo " "
+
 sort links.txt | uniq
 rm links.txt
