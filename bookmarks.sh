@@ -12,7 +12,7 @@ then
   build=$(dpkg -l | grep build-essential)
   if [ -z "$build" ]
   then
-    echo "Build-Essentail Not installed, install it? y/n"
+    echo "Build-Essential Not installed, install it? y/n"
     read install
     var=y
     if [ $install = $var ]
