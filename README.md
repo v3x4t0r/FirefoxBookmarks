@@ -10,3 +10,6 @@ To run the script:
 Bookmark backup:
 To save output to file, use > (./bookmarks.sh > bookmarks.txt)
 
+
+Works on Debian GNU/Linux 9 (stretch)
+Does not work on systems which use sqlite as bookmark database.
